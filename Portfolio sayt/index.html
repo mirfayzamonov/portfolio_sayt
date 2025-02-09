@@ -5,43 +5,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MY PORTFOLIO</title>
     <style>
+        /* Android rasmini yuvarloq qilib chizish */
         #android {
             width: 150px;
             height: 150px;
             border-radius: 50%;
+            animation: rotate 5s linear infinite;
         }
 
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Sarlavhalar uchun stillar */
         header {
             text-align: center;
         }
-
         h3 {
             color: blue;
+            animation: fadeIn 1s ease-in-out;
         }
 
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Jadvallar uchun stillar */
         table {
             border-collapse: collapse;
             width: 100%;
             margin-bottom: 20px;
         }
-
         th {
             border: 2px solid red;
             padding: 10px;
             background-color: #f2f2f2;
         }
-
         td {
             border: 1px solid red;
             padding: 8px;
         }
 
+        /* Paragraflar uchun stillar */
         p {
             background-color: white;
             padding: 15px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Hover effekti qo'shish */
+        .project-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Loyihalar uchun interaktiv elementlar */
+        .project-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #f2f2f2;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .project-item img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .project-item h4 {
+            margin-top: 0;
+        }
+        .project-item p {
+            margin-bottom: 0;
+        }
+
+        /* Responsivlik stillar */
+        @media (max-width: 768px) {
+            #android {
+                width: 100px;
+                height: 100px;
+            }
+            .project-item img {
+                max-width: 200px;
+            }
         }
     </style>
 </head>
@@ -135,42 +197,31 @@
         Men yoshligimdan yuqorida ko'rsatib o'tilgan texnologiyalarga qiziqaman. Shu bilan bir qatorda ko'plab loyihalar tayyorlaganman va tayyorlamoqdaman.
     </p>
     <p>Quyida ba'zi loyihalarim ko'rsatilgan:</p>
-    <table>
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>TEXNOLOGIYA</th>
-                <th>TAYYORLAGAN LOYIHAM</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>Python dasturlash tili</td>
-                <td>Kalkulyatorlar, turli xil grafik dizaynlar, Pythonni o'rganishni boshlayotgan o'quvchilar uchun qo'llanma: dasturlar, rasm, musiqa va videolarga ishlov beruvchi dasturlar, turli xil shakldagi test dasturlari va vositalar.</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>HTML dasturlash tili</td>
-                <td>HTML dasturlash tilida kalkulyatorlar, karra jadvali va elektron kitob yarataman. Shaxsiy veb saytimi yaratib joylamoqchiman.</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Kotlin, Java: Android dasturlash tili</td>
-                <td>Hozirgi kunda Java, Kotlin dasturlash tillarini o'rganib turli xil Android qurilmalari uchun kichik dasturlar yaratmoqdaman: jumladan, axborot xavfsizligini, ya'ni axborot almashinishda ma'lumotlar xavfsizligini oldini olish uchun shifrlash app'ini va Android qurilmalar uchun dasturlash metodik qo'llanmasini yaratmoqdaman.</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Elektronika, Maxatronika va Robototexnika</td>
-                <td>Yoshligimdan elektronika va robototexnikaga qiziqib kelaman. Ilk yaratgan loyiham aqlli mashina bo'lib, hozirgi kungacha shu dizayn va struktura ustida ilmiy ish olib bormoqdaman. Bundan tashqari energiya tejamkor mashinalar muqobil energiya manbalarida izlanishlar olib borib turli xil yutuqlarga erishganman. Shuningdek, dasturlash tillari, ya'ni Python va C++ dasturlash tillari kodlari bilan elektr qurilmalarini boshqarish va nazorat qilish (o'chirish, yoqish, tezligini, yorug'ligini va boshqa qiymatlarini nazorat qiluvchi dasturiy qurilma yaratganman). Avtomatik boshqaruv tizimlari sohasida bir qator yutuqlarga erishganman va izlanish olib bormoqdaman.</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>Kompyuter injineringi</td>
-                <td>Barcha aytib o'tgan sohalarim kabi kompyuter injineringi sohasida ham bir qator izlanishlar qilmoqdaman. 1: Kompyuter energiya tejamkorligi, ya'ni elektr energiyasi iste'molini kamaytirish, iqtisod qilish, kompyuter va qurilmalarining tez ishlashi va yaroqlilik muddatini oshirish yo'lida qurilmaning qizishini maksimal darajada pasaytirish (sovutish), monitordan tarqalayotgan zararli yorug'lik nurlaridan foydalanib elektr energiyasi olish yuzasidan bir qator tajribalar olib bordim va kelajakda buni hayorda qo'llamoqchiman.</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="project-item">
+        <img src="./images/python.jpg" alt="Python Project">
+        <h4>Python Loyihalari</h4>
+        <p>Kalkulyatorlar, turli xil grafik dizaynlar, Pythonni o'rganishni boshlayotgan o'quvchilar uchun qo'llanma: dasturlar, rasm, musiqa va videolarga ishlov beruvchi dasturlar, turli xil shakldagi test dasturlari va vositalar.</p>
+    </div>
+    <div class="project-item">
+        <img src="./images/html.jpg" alt="HTML Project">
+        <h4>HTML Loyihalari</h4>
+        <p>HTML dasturlash tilida kalkulyatorlar, karra jadvali va elektron kitob yarataman. Shaxsiy veb saytim yaratib joylamoqchiman.</p>
+    </div>
+    <div class="project-item">
+        <img src="./images/androidlogo.jpg" alt="Android Project">
+        <h4>Android Loyihalari</h4>
+        <p>Java, Kotlin dasturlash tillarini o'rganib turli xil Android qurilmalari uchun kichik dasturlar yaratmoqdaman: jumladan, axborot xavfsizligini, ya'ni axborot almashinishda ma'lumotlar xavfsizligini oldini olish uchun shifrlash app'ini va Android qurilmalar uchun dasturlash metodik qo'llanmasini yaratmoqdaman.</p>
+    </div>
+    <div class="project-item">
+        <img src="./images/electric.jpg" alt="Electronics Project">
+        <h4>Elektronika, Maxatronika va Robototexnika Loyihalari</h4>
+        <p>Yoshligimdan elektronika va robototexnikaga qiziqib kelaman. Ilk yaratgan loyiham aqlli mashina bo'lib, hozirgi kungacha shu dizayn va struktura ustida ilmiy ish olib bormoqdaman. Bundan tashqari energiya tejamkor mashinalar muqobil energiya manbalarida izlanishlar olib borib turli xil yutuqlarga erishganman. Shuningdek, dasturlash tillari, ya'ni Python va C++ dasturlash tillari kodlari bilan elektr qurilmalarini boshqarish va nazorat qilish (o'chirish, yoqish, tezligini, yorug'ligini va boshqa qiymatlarini nazorat qiluvchi dasturiy qurilma yaratganman). Avtomatik boshqaruv tizimlari sohasida bir qator yutuqlarga erishganman va izlanish olib bormoqdaman.</p>
+    </div>
+    <div class="project-item">
+        <img src="./images/computer.jpg" alt="Computer Engineering">
+        <h4>Kompyuter Injineringi Loyihalari</h4>
+        <p>Barcha aytib o'tgan sohalarim kabi kompyuter injineringi sohasida ham bir qator izlanishlar qilmoqdaman. 1: Kompyuter energiya tejamkorligi, ya'ni elektr energiyasi iste'molini kamaytirish, iqtisod qilish, kompyuter va qurilmalarining tez ishlashi va yaroqlilik muddatini oshirish yo'lida qurilmaning qizishini maksimal darajada pasaytirish (sovutish), monitordan tarqalayotgan zararli yorug'lik nurlaridan foydalanib elektr energiyasi olish yuzasidan bir qator tajribalar olib bordim va kelajakda buni hayorda qo'llamoqchiman.</p>
+    </div>
 
     <header>
         <h3>KELAJAKDAGI MAQSADLARIM</h3>
@@ -183,8 +234,11 @@
         <h3>Kontaktlar:</h3>
     </header>
     <p>
-        Email: mirfayz@example.com<br>
-        Telefon: +998 90 123 45 67
+        Email: amonovmirfayz608@gmail.com<br>
+        Telefon: +998945490979
+        Telefon: +998770902807
+        Telegramm: @mirfayz28
+        Telegramm: @est2409
     </p>
 </body>
 </html>
